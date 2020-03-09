@@ -35,12 +35,11 @@ by p1, p2, p3 and p4.
 Type determines whether the curve is bezier or hermite"""
 def generate_curve_coefs( p0, p1, p2, p3, type ):
     ans = [[p0,p1,p2,p3]]
-    if t == "bezier":
+    if type == "bezier":
         matrix_mult (make_bezier(), ans)
     else:
         matrix_mult (make_hermite(), ans)
     return ans
-
 
 
 def make_translate( x, y, z ):

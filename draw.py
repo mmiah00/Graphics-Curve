@@ -10,7 +10,8 @@ def add_circle( points, cx, cy, cz, r, step ):
     while (t <= 1):
         x = r * math.cos (2 * math.pi * t) + cx
         y = r * math.sin (2 * math.pi * t) + cy
-        add_point (points, x, y)
+        z = cz
+        add_point (points, x, y, cz)
         t += step
 
 """ ADD_CURVE (POINTS, X0, Y0, X1, Y1, X2, Y2, X3, Y3, STEP, CURVE_TYPE)
@@ -19,8 +20,8 @@ of type specified in type (see matrix.h for curve type constants)
 to the matrix edges
 """
 def add_curve( points, x0, y0, x1, y1, x2, y2, x3, y3, step, curve_type ):
-    exes = generate_curve_coefs (x0, x1, x2, curve_type)
-    whys = generate_curve_coefs (y0, y1, y2, curve_type)
+    exes = generate_curve_coefs (x0, x1, x2, x3, curve_type)
+    whys = generate_curve_coefs (y0, y1, y2, y3, curve_type)
     t = 0
     while (t <= 1):
         x_sum, y_sum = 0,0
