@@ -14,29 +14,33 @@ Returns: The correct 4x4 matrix that can be used
 to generate the coefiecients for a bezier curve
 """
 def make_bezier():
-    pass
+    return [ [-1, 3, -3, 1],
+             [3, -6, 3, 0],
+             [-3, 3, 0, 0],
+             [1, 0, 0, 0]]
 
 """ MAKE_HERMITE()
 Returns: The correct 4x4 matrix that can be used
 to generate the coefiecients for a hermite curve"""
 def make_hermite():
-    pass
+    return [ [2, -3, 0, 1],
+             [-2, 3, 0, 0],
+             [1, -2, 1, 0],
+             [1, -1, 0, 0]]
 
 """ GENERATE_CURVE_COEFS(P0, P1, P2, P3, T)
 Returns: A matrix containing the values for a, b, c and d of the
 equation at^3 + bt^2 + ct + d for the curve defined
 by p1, p2, p3 and p4.
 Type determines whether the curve is bezier or hermite"""
-def generate_curve_coefs( p0, p1, p2, p3, t ):
+def generate_curve_coefs( p0, p1, p2, p3, type ):
+    ans = [[p0,p1,p2,p3]]
     if t == "bezier":
-        A = -1 * p0 + 3 * p1 - 3 * p2 + p3
-        B = 3 * p0 - 6 * p1 + 3 * p2
-        C = -3 * p0 + 3  * p1
-        D = p0
+        matrix_mult (make_bezier(), ans)
     else:
-        
-        D = p0
-    return [A, B, C, D]
+        matrix_mult (make_hermite(), ans)
+    return ans
+
 
 
 def make_translate( x, y, z ):
