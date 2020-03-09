@@ -2,11 +2,28 @@ from display import *
 from matrix import *
 
 
+""" ADD_CIRCLE(POINTS, CX, CY, CZ, R, STEP)
+Adds the circle at (cx, cy) with radius r to edges
+"""
 def add_circle( points, cx, cy, cz, r, step ):
-    pass
+    t = 0
+    while (t <= 1):
+        x = r * math.cos (2 * math.pi * t) + cx
+        y = r * math.sin (2 * math.pi * t) + cy
+        add_point (points, x, y)
+        t += step
 
+""" ADD_CURVE (POINTS, X0, Y0, X1, Y1, X2, Y2, X3, Y3, STEP, CURVE_TYPE)
+Adds the curve bounded by the 4 points passsed as parameters
+of type specified in type (see matrix.h for curve type constants)
+to the matrix edges
+"""
 def add_curve( points, x0, y0, x1, y1, x2, y2, x3, y3, step, curve_type ):
-    pass
+    if (curve_type == "bezier"):
+        make_bezier ()
+    else:
+        make_hermite ()
+
 
 
 def draw_lines( matrix, screen, color ):

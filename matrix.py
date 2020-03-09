@@ -9,14 +9,34 @@ z0  z1  ... zn
 """
 import math
 
+""" MAKE_BEZIER()
+Returns: The correct 4x4 matrix that can be used
+to generate the coefiecients for a bezier curve
+"""
 def make_bezier():
     pass
 
+""" MAKE_HERMITE()
+Returns: The correct 4x4 matrix that can be used
+to generate the coefiecients for a hermite curve"""
 def make_hermite():
     pass
 
+""" GENERATE_CURVE_COEFS(P0, P1, P2, P3, T)
+Returns: A matrix containing the values for a, b, c and d of the
+equation at^3 + bt^2 + ct + d for the curve defined
+by p1, p2, p3 and p4.
+Type determines whether the curve is bezier or hermite"""
 def generate_curve_coefs( p0, p1, p2, p3, t ):
-    pass
+    if t == "bezier":
+        A = -1 * p0 + 3 * p1 - 3 * p2 + p3
+        B = 3 * p0 - 6 * p1 + 3 * p2
+        C = -3 * p0 + 3  * p1
+        D = p0
+    else:
+        
+        D = p0
+    return [A, B, C, D]
 
 
 def make_translate( x, y, z ):
