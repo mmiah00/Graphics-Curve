@@ -19,11 +19,4 @@ transform = new_matrix()
 # print
 # print_matrix( make_rotZ(math.pi/4) )
 
-add_circle (edges, 250, 250, 0, 200, 0.01)
-draw_lines (edges, screen, color)
-
-display(screen)
-save_ppm(screen, 'binary.ppm')
-save_ppm_ascii(screen, 'ascii.ppm')
-save_extension(screen, 'img.png')
-#parse_file( 'script', edges, transform, screen, color )
+parse_file( 'script', edges, transform, screen, color )

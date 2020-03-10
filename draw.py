@@ -25,8 +25,8 @@ def add_curve( points, x0, y0, x1, y1, x2, y2, x3, y3, step, curve_type ):
     t = 0
     while (t <= 1):
         x_sum, y_sum = 0,0
-        for i in range (len (exes)):
-            co_x, co_y = exes[i], whys[i]
+        for i in range (len (exes[0])):
+            co_x, co_y = exes[0][i], whys[0][i]
             x_sum += (co_x * pow (t, 3 - i))
             y_sum += (co_y * pow (t, 3 - i))
         add_point (points, x_sum, y_sum)
