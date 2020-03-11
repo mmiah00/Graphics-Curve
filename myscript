@@ -5,8 +5,8 @@ bezier
 300 80 300 45 300 45 320 60
 hermite
 200 80 220 150 0 30 50 80
-bezier
-320 60 450 150 450 300 250 420  
+hermite
+300 80 280 150 0 30 -50 80
 #head
 bezier
 280 150 400 175 415 300 375 350
@@ -25,7 +25,35 @@ bezier
 hermite
 350 380 150 380 -150 100 -200 -100
 circle
+250 250 0 215
+circle
 250 250 0 225
+circle
+250 250 0 235
+circle
+250 250 0 245
+circle
+250 250 0 255
+circle
+250 250 0 265
+circle
+250 250 0 275
+circle
+250 250 0 285
+circle
+250 250 0 295
+circle
+250 250 0 305
+circle
+250 250 0 315
+circle
+250 250 0 325
+circle
+250 250 0 335
+circle
+250 250 0 345
+circle
+250 250 0 355
 display
 save
 cat.png
