@@ -89,11 +89,11 @@ def parse_file( fname, edges, transform, screen, color ):
             matrix_mult( transform, edges )
 
         elif line == 'hermite' or line == 'bezier':
-            add_curve (edges, int (args[0]), int (args[1]), int (args[2]), int (args[3]), int (args[4]), int (args[5]), int (args[6]), int (args[7]), 0.01, line)
+            add_curve (edges, int (args[0]), int (args[1]), int (args[2]), int (args[3]), int (args[4]), int (args[5]), int (args[6]), int (args[7]), 0.0001, line)
 
         elif line == 'circle':
-            add_circle (edges, int (args[0]), int (args[1]), int (args[2]), int (args[3]), 0.01)
-            
+            add_circle (edges, int (args[0]), int (args[1]), int (args[2]), int (args[3]), 0.0001)
+
         elif line == 'display' or line == 'save':
             clear_screen(screen)
             draw_lines(edges, screen, color)
